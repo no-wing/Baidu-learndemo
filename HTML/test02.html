@@ -1,70 +1,74 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>简历</title>
 	</head>
-    <link id="l1" rel="stylesheet" type="text/css" href="../css/style01.css"/>
+	<link id="l1" rel="stylesheet" type="text/css" href="../css/style01.css" />
+
 	<body>
 		<h1>简历</h1>
 		<div id="con">
-         <div class="d1">
-         	<h2>基本信息</h2>
-         	<strong>姓名&nbsp;&nbsp;</strong><span>张三</span>
-         	<strong>性别&nbsp;&nbsp;</strong><span>男</span>
-         	<strong>应聘职位&nbsp;&nbsp;</strong><span>web前端工程师</span>
-         </div>
-         <div class="d1">
-         	<h2>联系方式</h2>
-         	<strong>手机&nbsp;&nbsp;</strong><span>12345678912</span>
-         	<strong>Email&nbsp;&nbsp;</strong><a href="">qianduan@baidu.com</a>
-         	<strong>个人主页&nbsp;&nbsp;</strong><a href="">Github</a>
-         </div>
-         <div class="d1">
-         	<h2>能力描述</h2>
-         	<h3>技术能力</h3>
-         	<p>熟练掌握HTML，CSS，JavaScript</p>
-         	<h3>综合能力</h3>
-         	<p>良好的沟通，主动积极，努力勤奋</p>
-         </div>
-         <div class="d1">
-         	<h2>教育经历</h2>
-         	<h3>本科</h3>
-         	<p>百度前端技术学院小薇学院</p>
-         	<h3>研究生</h3>
-         	<p>百度前端技术学院大斌学院</p>
-         </div>
-         <div class="d1">
-         	<h2>项目经历</h2>
-         	<h3>小度小度</h3>
-         	<p>作为前端工程师角色参与了ABC组件开发</p>
-         	<h3>SAN Doc</h3>
-         	<p>作为文档工程师参与了SAN Doc编写</p>
-         </div>
-         </div>
-         <button id="btn">修改样式</button>
-         	<script type="text/javascript">
-         		var n = 1;
-		document.getElementById("btn").onclick = function(){
-			 document.getElementById("l1").remove();
-			 var head = document.getElementsByTagName('head')[0];
-             var link = document.createElement('link');
-             link.id = "l1";
-             if(n==1){
-             link.href = "../css/style02.css"
-             }
-             else if(n==2){
-             link.href = "../css/style03.css"
-             }
-             else{
-             	link.href = "../css/style01.css"
-             	n=0
-             }
-             link.rel = 'stylesheet';
-             link.type = 'text/css';
-             head.appendChild(link);
-             n++;
-		}
-	</script>
+			<div class="d1">
+				<h2>基本信息</h2>
+				<strong>姓名&nbsp;&nbsp;</strong><span>张三</span>
+				<strong>性别&nbsp;&nbsp;</strong><span>男</span>
+				<strong>应聘职位&nbsp;&nbsp;</strong><span>web前端工程师</span>
+			</div>
+			<div class="d1">
+				<h2>联系方式</h2>
+				<strong>手机&nbsp;&nbsp;</strong><span>12345678912</span>
+				<strong>Email&nbsp;&nbsp;</strong>
+				<a href="">qianduan@baidu.com</a>
+				<strong>个人主页&nbsp;&nbsp;</strong>
+				<a href="">Github</a>
+			</div>
+			<div class="d1">
+				<h2>能力描述</h2>
+				<h3>技术能力</h3>
+				<p>熟练掌握HTML，CSS，JavaScript</p>
+				<h3>综合能力</h3>
+				<p>良好的沟通，主动积极，努力勤奋</p>
+			</div>
+			<div class="d1">
+				<h2>教育经历</h2>
+				<h3>本科</h3>
+				<p>百度前端技术学院小薇学院</p>
+				<h3>研究生</h3>
+				<p>百度前端技术学院大斌学院</p>
+			</div>
+			<div class="d1">
+				<h2>项目经历</h2>
+				<h3>小度小度</h3>
+				<p>作为前端工程师角色参与了ABC组件开发</p>
+				<h3>SAN Doc</h3>
+				<p>作为文档工程师参与了SAN Doc编写</p>
+			</div>
+		</div>
+		<button id="btn">修改样式</button>
+		<script type="text/javascript">
+			alert("123");
+			var n = 1;
+			document.getElementById("btn").onclick = function() {
+				document.getElementById("l1").remove();
+				var head = document.getElementsByTagName('head')[0];
+				var link = document.createElement('link');
+				link.id = "l1";
+				if(n == 1) {
+					link.href = "../css/style02.css"
+				} else if(n == 2) {
+					link.href = "../css/style03.css"
+				} else {
+					link.href = "../css/style01.css"
+					n = 0
+				}
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				head.appendChild(link);
+				n++;
+			}
+		</script>
 	</body>
+
 </html>
