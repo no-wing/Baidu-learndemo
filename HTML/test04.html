@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		
+		.banner {
+			width: 100%;
+			height: 800px;
+			margin: 0;
+			padding: 0;
+			background-image: url(../img/前端学院设计图_01.png);
+			position: relative;
+		}
+		
+		.banner section {
+			color: white;
+			width: 50%;
+			height: 30%;
+			position: absolute;
+			left: 25%;
+			top: 20%;
+			text-align: center;
+		}
+		
+		.banner h1 {
+			font-size: 50px;
+		}
+		
+		.banner div {
+			width: 60%;
+			height: 25%;
+			color: white;
+			position: absolute;
+			left: 20%;
+			top: 60%;
+			text-align: center;
+			border-top: 1px solid white;
+			border-bottom: 1px solid white;
+			padding-top: 30px;
+		}
+		
+		#sp1 {
+			font-size: 20px;
+			line-height: 40px;
+		}
+		
+		#sp2 {
+			font-size: 12px;
+			line-height: 40px;
+		}
+		
+		.banner button {
+			width: 160px;
+			height: 40px;
+			position: relative;
+			top: 30px;
+			margin: 10px;
+			color: #FFFFFF;
+			background: rgba(0, 0, 0, 0);
+			border: 1px solid white;
+		}
+		
+		.banner button:hover {
+			background-color: white;
+			color: #000000;
+		}
+		
+		.content {
+			width: 100%;
+			height: 430px;
+			text-align: center;
+			padding-top: 50px;
+		}
+		
+		#sp3 {
+			font-size: 20px;
+			width: 40%;
+		}
+		
+		#sp4 {
+			font-size: 35px;
+			width: 40%;
+			position: relative;
+			left: 30%;
+			top: -10px;
+		}
+		
+		.content div {
+			width: 65%;
+			height: 220px;
+			position: relative;
+			left: 20%;
+			text-align: left;
+			display: flex;
+			flex-flow: wrap;
+		}
+		
+		.content img {
+			float: left;
+			margin-right: 20px;
+		}
+		
+		.content p {
+			width: 60%;
+			position: absolute;
+			top: 30px;
+			left: 70px;
+			font-size: 15px;
+		}
+		
+		.content section {
+			width: 50%;
+			height: 50%;
+			position: relative;
+		}
+		
+		.content h1 {
+			position: absolute;
+			top: -25px;
+			left: 70px;
+		}
+		
+		.content2 {
+			width: 100%;
+			height: 800px;
+			background-image: url(../img/前端学院设计图_14.png);
+			position: relative;
+		}
+		
+		.content2 h1 {
+			color: white;
+			width: 15%;
+			font-size: 27px;
+			position: absolute;
+			top: 25%;
+			left: 15%;
+		}
+		
+		.content2 p {
+			color: white;
+			width: 15%;
+			font-size: 15px;
+			position: absolute;
+			top: 40%;
+			left: 15%;
+		}
+		
+		.content3 {
+			width: 100%;
+			height: 470px;
+			text-align: center;
+			padding-top: 60px;
+		}
+		
+		.content3 div {
+			width: 60%;
+			display: flex;
+			margin-top: 60px;
+			position: relative;
+			left: 20%;
+		}
+		
+		.content3 p {
+			padding-left: 50px;
+			padding-right: 50px;
+			font-size: 15px;
+			color: #A9A9A9;
+		}
+		
+		.content4 {
+			width: 100%;
+			height: 800px;
+			border-top: 1px solid #A9A9A9;
+			border-bottom: 1px solid #A9A9A9;
+		}
+		
+		.content4 section {
+			width: 60%;
+			height: 30%;
+			position: relative;
+			left: 20%;
+		}
+		
+		.content4 img {
+			width: 50%;
+			height: 100%;
+		}
+		
+		#sec1 {
+			margin-top: 120px;
+		}
+		
+		#sec2 {
+			margin-top: 80px;
+			margin-bottom: 120px;
+			*/
+		}
+		
+		#sec1 img {
+			float: left;
+		}
+		
+		#sec1 h1 {
+			position: relative;
+			left: 60px;
+			top: 15%;
+		}
+		
+		#sec1 p {
+			width: 90%;
+			position: relative;
+			left: 60px;
+			top: 20%;
+			color: #A9A9A9;
+		}
+		
+		#sec2 img {
+			float: right;
+		}
+		
+		#sec2 h1 {
+			position: relative;
+			top: 15%;
+			left: 5%;
+		}
+		
+		#sec2 p {
+			position: relative;
+			top: 20%;
+			left: 5%;
+			width: 35%;
+			color: #A9A9A9;
+		}
+		
+		.content5 {
+			width: 100%;
+			height: 900px;
+			border-bottom: 1px solid #A9A9A9;
+			text-align: center;
+		}
+		
+		.content5 h1 {
+			margin-top: 80px;
+		}
+		
+		.content5 p {
+			width: 40%;
+			position: relative;
+			left: 30%;
+			padding: 30px;
+			color: #A9A9A9;
+			
+		}
+		
+		#imgdiv1 {
+			width: 60%;
+			height: 640px;
+			display: flex;
+			flex-flow: wrap;
+			position: relative;
+			left: 20%;
+		}
+		
+		#imgdiv11,
+		#imgdiv12,
+		#imgdiv13,
+		#imgdiv14 {
+			width: 45%;
+			height: 280px;
+			margin: 20px;
+		}
+		
+		#imgdiv11 {
+			background-image: url(../img/前端学院设计图_30.png);
+		}
+		
+		#imgdiv12 {
+			background-image: url(../img/前端学院设计图_31.png);
+		}
+		
+		#imgdiv13 {
+			background-image: url(../img/前端学院设计图_26.png);
+		}
+		
+		#imgdiv14 {
+			background-image: url(../img/前端学院设计图_30.png);
+		}
+		
+		#imgdiv11 section {
+			width: 100%;
+			height: 100%;
+			background-color: #000000;
+			opacity: 0;
+			color: white;
+			padding: 30px;
+			box-sizing: border-box;
+		}
+		
+		#imgdiv11 section:hover {
+			opacity: 0.8;
+		}
+		
+		#imgdiv12 section {
+			width: 100%;
+			height: 100%;
+			background-color: #000000;
+			opacity: 0;
+			color: white;
+			padding: 30px;
+			box-sizing: border-box;
+		}
+		
+		#imgdiv12 section:hover {
+			opacity: 0.8;
+		}
+		
+		#imgdiv13 section {
+			width: 100%;
+			height: 100%;
+			background-color: #000000;
+			opacity: 0;
+			color: white;
+			padding: 30px;
+			box-sizing: border-box;
+		}
+		
+		#imgdiv13 section:hover {
+			opacity: 0.8;
+		}
+		
+		#imgdiv14 section {
+			width: 100%;
+			height: 100%;
+			background-color: #000000;
+			opacity: 0;
+			color: white;
+			padding: 30px;
+			box-sizing: border-box;
+		}
+		
+		#imgdiv14 section:hover {
+			opacity: 0.8;
+		}
+		.content6{
+			width: 100%;
+			height: 580px;
+			display: flex;
+			justify-content: center;
+			padding-top: 60px;
+		}
+		.intput1{
+			width: 25%;
+			height: 500px;
+			border: 1px solid #A9A9A9;
+			display: flex;
+			flex-flow: column;
+			text-align: center;
+		}
+		.intput1 input{
+			width: 80%;
+			height: 40px;
+			border: 1px solid #A9A9A9;
+			margin-bottom: 20px;
+		}
+		.intput1 textarea{
+			width: 80%;
+			height: 150px;
+			border: 1px solid #A9A9A9;
+			margin-bottom: 20px;
+		}
+		.intput1 button{
+			width: 80%;
+			height: 40px;
+			background-color: #000000;
+			color: white;
+			border: 1px solid #A9A9A9;
+		}
+		.contacts{
+			width: 25%;
+			height: 500px;
+			text-align: left;
+			padding: 70px;
+			box-sizing: border-box;
+			margin-left: 20px;
+		}
+		.contacts p{
+			color: #A9A9A9;
+		}
+		footer{
+			width: 100%;
+			height: 320px;
+			background-color: #000000;
+			color: white;
+			display: flex;
+		}
+		footer p{
+			padding: 50px;
+		}
+	</style>
+
+	<body>
+		<div class="banner">
+			<section>
+				<h1>Hello World</h1>
+				<p>Said Tommy the Cat as he reeled back to clear whatever foreign matter may have nestled its way into his mighty throat. Many a fat alley rat had met its demise while staring point blank down the cavernous barrel of this awesome prowling machine. Truly a wonder of nature this urban predator — Tommy the cat had many a story to tell. </p>
+			</section>
+			<div>
+				<span id="sp1"> clear whatever foreign matter may have nestled</span><br />
+				<span id="sp2"> clear whatever foreign matter may have nestled</span><br />
+				<button>prowling machine</button>
+				<button>prowling machine</button>
+				<button>prowling machine</button>
+			</div>
+		</div>
+		<div class="content">
+			<span id="sp3">barrel of this awesome</span>
+			<p id="sp4">Truly a wonder of nature this urban predator</p>
+			<div id="">
+				<section>
+					<img src="../img/前端学院设计图_04.png" />
+					<h1>prowling</h1>
+					<p>clear whatever foreign matter may have nestled to clear whatever foreign matter </p>
+				</section>
+				<section>
+					<img src="../img/前端学院设计图_06.png" />
+					<h1>prowling</h1>
+					<p>clear whatever foreign matter may have nestled to clear whatever foreign matter </p>
+				</section>
+				<section>
+					<img src="../img/前端学院设计图_11.png" />
+					<h1>prowling</h1>
+					<p>clear whatever foreign matter may have nestled to clear whatever foreign matter </p>
+				</section>
+				<section>
+					<img src="../img/前端学院设计图_10.png" />
+					<h1>prowling</h1>
+					<p>clear whatever foreign matter may have nestled to clear whatever foreign matter </p>
+				</section>
+			</div>
+		</div>
+		<div class="content2">
+			<h1>the cavernous barrel of this </h1>
+			<p>its demise while staring point blank down the cavernous barrel of this awesome prowling machine. Truly a wonder of nature this urban predator</p>
+		</div>
+		<div class="content3">
+			<h1>clear whatever foreign matter may have nestled</h1>
+			<div>
+				<section>
+					<h2>cavernous</h2>
+					<p>its demise while staring point blank down the cavernous barrel of this awesome prowling machine.its demise while staring point blank down the cavernous barrel of</p>
+				</section>
+				<section>
+					<h2>barrel</h2>
+					<p>its demise while staring point blank down the cavernous barrel of this awesome prowling machine.its demise while staring point blank down the cavernous barrel of</p>
+				</section>
+				<section>
+					<h2>point</h2>
+					<p>its demise while staring point blank down the cavernous barrel of this awesome prowling machine.its demise while staring point blank down the cavernous barrel of</p>
+				</section>
+			</div>
+		</div>
+		<div class="content4">
+			<section id="sec1">
+				<img src="../img/前端学院设计图_17.png" />
+				<h1>its demise while staring</h1>
+				<p>while staring point blank down the cavernous barrel of this awesome prowling machine.its demise while staring point blank down the cavernous barrel of</p>
+			</section>
+			<section id="sec2">
+				<img src="../img/前端学院设计图_21.png" />
+				<h1>its demise while staring</h1>
+				<p>while staring point blank down the cavernous barrel of this awesome prowling machine.its demise while staring point blank down the cavernous barrel of</p>
+			</section>
+		</div>
+		<div class="content5">
+			<h1>its demise while staring</h1>
+			<p>while staring point blank down the cavernous barrel of this awesome prowling machine.its demise while staring point blank down the cavernous barrel of</p>
+			<div id="imgdiv1">
+				<div id="imgdiv11">
+					<section>
+						<h2>machine</h2>
+						<span>this awesome back to clear</span>
+					</section>
+				</div>
+				<div id="imgdiv12">
+					<section>
+						<h2>machine</h2>
+						<span>this awesome back to clear</span>
+					</section>
+				</div>
+				<div id="imgdiv13">
+					<section>
+						<h2>machine</h2>
+						<span>this awesome back to clear</span>
+					</section>
+				</div>
+				<div id="imgdiv14">
+					<section>
+						<h2>machine</h2>
+						<span>this awesome back to clear</span>
+					</section>
+				</div>
+			</div>
+		</div>
+		<div class="content6">
+			<div class="intput1">
+				<form>
+					<h2>join us</h2>
+					<input type="text" />
+					<input type="text" />
+					<textarea></textarea>
+					<button type="submit">SEND</button>
+				</form>
+			</div>
+			<div class="contacts">
+				<h1>contacts</h1>
+				<p>this awesome back to clear this awesome back to clear awesome back this awesome back to this awesome back clear this awesome back to clear</p>
+				<p>awesome back to clear</p>
+				<p>awesome back to clear</p>
+				<p>awesome back to clear</p>
+			</div>
+		</div>
+		<footer>
+			<p>this awesome back to clear this awesome back to clear awesome back this awesome back to this awesome back clear this awesome back to clear</p>
+			<p>this awesome back to clear this awesome back to clear awesome back this awesome back to this awesome back clear this awesome back to clear</p>
+			<p>this awesome back to clear this awesome back to clear awesome back this awesome back to this awesome back clear this awesome back to clear</p>
+			<p>this awesome back to clear this awesome back to clear awesome back this awesome back to this awesome back clear this awesome back to clear</p>
+		</footer>
+	</body>
+
+</html>
