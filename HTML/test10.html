@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+     .one{
+     	background-image: url(../img/erik_ce204002.jpg);
+     	background-repeat: no-repeat;
+     	background-size: 500px 5100px;
+     	width: 500px;
+     	height: 300px;
+     	background-position: 0px 0px;
+
+     }
+	</style>        
+	<body>
+		<div class="one"></div>
+		
+	</body>
+     <script type="text/javascript">
+     	var num = 0;
+     	var order = 1;
+     	function gif1(){
+     		if (order === 1) {
+     			num = num-300;
+     		} 
+     		else if(order ===-1){
+     			num = num+300
+     		}
+     		
+     		document.getElementsByClassName("one")[0].style.backgroundPosition = "0px "+num+"px";
+     		console.log("123");
+     		if (num === -4800) {
+     			order = -1;
+     		}
+     		else if (num === 0) {
+     			order = 1;
+     		}
+     	}
+     	/*document.getElementById("btn1").addEventListener('click',gif1);*/
+     	window.setInterval(gif1,80);
+     </script>
+</html>
