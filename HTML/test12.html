@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div>
+			<label>String A:
+               <input id="radio-a" type="radio" checked="true" name="str-obj" value="a">
+            </label>
+			<textarea id="str-a"></textarea>
+			<label>String B:
+               <input id="radio-b" type="radio" name="str-obj" value="b">
+            </label>
+			<textarea id="str-b"></textarea>
+			<label>Num A：<input id="num-a" type="number" value="0"></label>
+			<label>Num B：<input id="num-b" type="number" value="1"></label>
+		</div>
+		<div id="dd1">
+			<button>获取当前选中输入的内容长度</button>
+			<button>当前选中输入中的第3个字符</button>
+			<button>把两个输入框的文字连接在一起输出（concat）</button>
+			<button>输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）</button>
+			<button>输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）</button>
+			<button>使用slice获取选中输入框内容的部分内容，参数为num-a及num-b</button>
+			<button>当前选中输入框的行数</button>
+			<button>使用substr获取选中输入框内容的子字符串，参数为num-a及num-b</button>
+			<button>把所选输入框中的内容全部转为大写</button>
+			<button>把所选输入框中的内容全部转为小写</button>
+			<button>把所选输入框中内容的半角空格全部去除</button>
+			<button>把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
+		</div>
+		<p id="result"></p>
+	</body>
+	<script type="text/javascript">
+		    var div1 = document.getElementById("dd1");
+		    var btn = div1.querySelectorAll('button');
+		    div1.onclick = function(e){
+		    	var e = e || window.event;
+		    	var tag = e.target || e.srcElement;
+		    	var ra = document.getElementById("radio-a").checked;
+		    	var rb = document.getElementById("radio-b").checked;
+		    	var sa = document.getElementById("str-a").value;
+		    	var sb = document.getElementById("str-b").value;
+		    	var na = document.getElementById("num-a").value;
+		    	var nb = document.getElementById("num-b").value;
+		    	var row;
+		    	var sel;
+		    	if (ra === true) {
+		    		sel = sa;
+		    		ss = sb;
+		    		row = document.getElementById("str-a").rows;
+		    	}
+		    	else if (rb === true) {
+		    		sel = sb;
+		    		ss = sa;
+		    		row = document.getElementById("str-b").rows;
+		    	}
+		    	else{
+		    		console.log("请选择");
+		    	}
+		    	switch (tag){
+		    		case btn[0]:
+		    		    document.getElementById("result").innerHTML = sel.length;
+		    			break;
+		    	    case btn[1]:
+		    		    document.getElementById("result").innerHTML = sel.slice(2,3);
+		    			break;
+		    		case btn[2]:
+		    		    document.getElementById("result").innerHTML = sa+sb;
+		    			break;
+		    		case btn[3]:
+		    		    document.getElementById("result").innerHTML = sa.indexOf(sb);
+		    			break;
+		    		case btn[4]:
+		    		    document.getElementById("result").innerHTML = sb.lastIndexOf(sa);
+		    			break;
+		    		case btn[5]:
+		    		    document.getElementById("result").innerHTML = sel.slice(na,nb);
+		    			break;
+		    		case btn[6]:
+		    		    document.getElementById("result").innerHTML = row;
+		    			break;
+		    		case btn[7]:
+		    		    document.getElementById("result").innerHTML = sel.substr(na,nb);
+		    			break;
+		    		case btn[8]:
+		    		    document.getElementById("result").innerHTML = sel.toLocaleUpperCase();
+		    			break;
+		    		case btn[9]:
+		    		    document.getElementById("result").innerHTML = sel.toLocaleLowerCase();
+		    			break;
+		    		case btn[10]:
+		    		    document.getElementById("result").innerHTML = sel.replace(/\s+/g,'');
+		    			break;
+		    		case btn[11]:
+		    		    document.getElementById("result").innerHTML = sel.replace(/a/g,ss);
+		    			break;
+		    		default:
+		    			break;
+		    	}
+		    }
+	</script>
+
+</html>
