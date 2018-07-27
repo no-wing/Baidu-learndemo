@@ -1,10 +1,104 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-		
-	</body>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    #email-sug-wrapper{
+		display: none;
+	}
+	ul li:hover{
+		background-color: #6495ED;
+	}
+	li:first-child{
+		background-color: #FFE4C4;
+	}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <input id="email-input" type="text">
+        <ul id="email-sug-wrapper" class="email-sug"></ul>
+    </div>
+</body>
+<script type="text/javascript">
+	//初始化
+	var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+	var pra = document.getElementById("email-sug-wrapper");
+	var selectN = 1;
+	for (var i = 0; i < postfixList.length; i++) {
+		var child = document.createElement("li");
+		child.innerHTML = postfixList[i];
+		pra.appendChild(child);
+		}
+	//提示框显示
+	document.getElementById("email-input").addEventListener('keyup',function(){
+		var data = this.value;
+		var list = document.querySelectorAll('ul li');
+		data = data.replace(/\s+/g,'');
+		if (data.length === 0) {
+			pra.style.display = "none";
+		}
+		else{
+			pra.style.display = "inline";
+		}
+		 if (data.indexOf("@") !== -1) {
+			var cut = data.slice(data.indexOf("@")+1,data.length);
+			for (var i = 0; i < list.length; i++) {
+				if (postfixList[i].slice(0,cut.length) !== cut) {
+					list[i].style.display = "none";
+					console.log(postfixList[i].slice(0,cut.length));
+				}
+				else{
+					list[i].style.display = "block";
+				}
+			} 
+		} else{
+			for (var i = 0; i < list.length; i++) {
+			list[i].innerHTML = data + "@" + postfixList[i];
+			list[i].style.display = "block";
+			}
+		} 
+	});
+	//提示框点击
+	document.getElementById("email-sug-wrapper").addEventListener('click',function(e){
+		var e = e||window.event;
+		var tar = e.target || e.srcElement;
+		document.getElementById("email-input").value = tar.innerHTML;
+		pra.style.display = "none";
+		document.getElementById("email-input").focus();
+	});
+	//键盘功能
+	document.getElementById("email-input").addEventListener('keyup',function(e){
+		var list = document.querySelectorAll('ul li');
+		console.log(e.keyCode);
+		if (e.keyCode === 40) {
+			if (selectN === list.length) {
+				console.log("end");
+			} else{
+				list[selectN-1].style.backgroundColor = "#FFFFFF";
+				list[selectN].style.backgroundColor = "#FFE4C4";
+				selectN++;
+			}
+		} else if(e.keyCode === 38){
+			if (selectN === 1) {
+				console.log("end");
+			} else{
+				list[selectN-1].style.backgroundColor = "#FFFFFF";
+				list[selectN-2].style.backgroundColor = "#FFE4C4";
+				selectN--;
+			}
+		}
+		else if(e.keyCode === 13){
+			document.getElementById("email-input").value = list[selectN-1].innerHTML;
+			pra.style.display = "none";
+			this.focus();
+		}
+		else if(e.keyCode === 27){
+			this.select();
+		}
+	})
+</script>
 </html>
